@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300&display=swap');
+
+body{
+    background-color: white;
+    margin: 0px;
+    padding:0px;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+#main {
+     width: 70%;
+     min-height: 950px;
+     margin: auto;
+     display: flex;
+     padding-top: 10px;
+     padding-bottom: 10px;
+     
+}
+
+#profile {
+   width: 30%;
+   background-color: #dbdbdb;
+   border-bottom: 2px solid black;
+   border-left: 2px solid black;
+   border-right: 2px double black;
+   border-top: 2px solid black;
+   box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+#profile_image_container {
+     margin-top: 5px;
+     padding-left: 15%;
+}
+#profile_image{
+    width: 150px;
+    border-radius:60%;
+    padding-bottom: 15px;
+}
+
+#habilities {
+    background-color: #85c7f2;
+    width: 60%;
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+    border-top: 2px solid black;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    color: black
+}
+
+.remarked {
+  width: 60px;
+  text-align: left;
+  margin: 0px;
+  padding-top: 0px;
+  height: 5px;
+  border-radius: 20%;
+  background-color: dimgray;
+  margin-top: 2px;
+}
+
+.header{
+    padding-bottom: 0px;
+    margin-bottom: 5px;
+    padding-top: 10px;
+    
+}
+
+.content-Right{
+    margin-left: 30px;
+    text-align: left;
+}
+
+#contact_list{
+    padding: 0%;
+    margin: 0%;
+
+}
+#contact_list li {
+    list-style: none;
+    display:flex;
+    margin-bottom: 0px;
+
+}
+
+#contact_list li i {
+   padding-right: 5px;
+
+}
+
+#contact_list li p {
+    text-align: left;
+    margin-bottom: 0px;
+
+ }
+ 
+.big-header{
+    text-align: center;
+    margin-top: 20px;
+    font-size: 2.9em;
+    margin-bottom: 0%;
+    padding-right: 15%;
+}
+
+#profession{
+    text-align: center;
+    font-size: 1.5em;
+    margin-top: 2px;
+    padding-right: 15%;
+    padding-bottom: 3%;
+}
