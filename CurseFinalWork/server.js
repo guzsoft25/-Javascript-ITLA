@@ -8,8 +8,11 @@ const app = express()
 //setup view engine
 app.set('view engine','ejs')
 
+//Tokens
+const SuperSecretToken = "11122223334445556677899"
+
 app.use(session({
-	secret: 'zUg^H@}CY2/JnTNd%c$yrch-745Ugm@}d#~U]AjN',
+	secret: SuperSecretToken,
 	resave: true,
 	saveUninitialized: true
 }));
@@ -28,22 +31,49 @@ app.get('/login',(req,res)=>{
     }
 })
 
+
+app.get("/postlogin",(req,res)=>{
+
+    let userName = req.query.username
+    let token = req.query.token
+
+   if(userName && token) {
+        
+       console.log(`Request Token: ${token} Super Secret: ${SuperSecretToken}`)
+
+        if(token===SuperSecretToken){
+          
+            req.session.loggedin = true;
+            req.session.username = userName; 
+            
+            req.session.cookie.expires = Math.floor(Date.now() / 60e3)
+            req.session.cookie.originalMaxAge = 24 * 60 * 60 * 1000  
+            
+            console.log(req.session);
+            // Redirect to home page
+            res.redirect('/');
+        }
+        else {
+            res.render(__dirname + '/assets/views/login',{title:"Login Page",message:`user is aunautorized`})
+        }
+
+   }
+   else {
+       res.render(__dirname + '/assets/views/login',{title:"Login Page",message:`user is aunautorized`})
+   }
+})
+
+
+
+
 app.post('/login',(req,res)=>{
     let username = req.body.username;
 	let password = req.body.password;
     console.log("Entre al post del login!")
     if(username && password) {
-       
-        //TODO: call User api and validate if user and password is correct
-        const url = `http://localhost:3000/users?userName=${username}&PassWord=${password}`
 
-        var isValidCredentials = false;
+        var isValidCredentials = true;
          
-      
-        if(username === "admin" && password === "123"){
-            isValidCredentials = true
-        }
-
         if(isValidCredentials) {
             req.session.loggedin = true;
             req.session.username = username; 
