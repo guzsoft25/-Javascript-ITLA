@@ -2,18 +2,29 @@
 <html lang="en">
 
 <head>
-    <title><%= locals.title || "Customers interactions screen" %> </title>
+    <title>
+        <%= locals.title || "Customers interactions screen" %>
+    </title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        <%=locals.title || 'Main Form' %>
-    </title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" type="text/css"
+        href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap-extended.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/fonts/simple-line-icons/style.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/colors.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/interactions.css">
 </head>
 
 <body>
@@ -57,6 +68,118 @@
         </nav>
     </div>
 
+
+    <h3 style="text-align:center;">Customer Interactions</h3>
+
+ 
+    <div class="grey-bg container-fluid">
+        
+        <section id="minimal-statistics">
+            <div class="row" style="margin-bottom:10px;">
+                <div class="col-xl-11 col-sm-11 col-11">
+                    <input type="text" placeholder="Search by customer" class="form-control" style="margin-right: 2px;">
+                </div>
+                <div class="col-xl-1 col-sm-1 col-1">
+                    <button class="btn btn-primary btn" id="btnSearch"><i class="fa fa-search" aria-hidden="true"></i></button>
+                </div>
+               </div>
+
+            <div class="row" id="mainCards">
+                
+            </div>
+        </section>
+    </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Complete Iteration</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="Id" class="col-form-label">Id</label>
+                  <input type="text" class="form-control" id="Id" readonly>
+                </div>
+
+                <div class="form-group">
+                  <label for="completeNote" class="col-form-label">Completion Note</label>
+                 <textarea id="completeNote" name="completeNote"  class="form-control"></textarea>
+                </div>
+
+              </form>
+              <p id="createAt"></p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-success" value="new" id="btnSubmit">Complete</button>
+              <button type="button" class="btn btn-danger" data-dismiss="modal" id="btnCloseModal">Close Modal</button>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Iteration Details</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="txtIterationId" class="col-form-label">Id</label>
+                  <input type="text" class="form-control" id="txtIterationId" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label for="txtCustomerName" class="col-form-label">Customer Name</label>
+                    <input type="text" class="form-control" id="txtCustomerName" readonly>
+                  </div>
+
+                <div class="form-group">
+                    <label for="txtIterationType" class="col-form-label">Type</label>
+                    <input type="text" class="form-control" id="txtIterationType" readonly>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="txtIterationStatus" class="col-form-label">Status</label>
+                    <input type="text" class="form-control" id="txtIterationStatus" readonly>
+                  </div>
+
+                <div class="form-group">
+                  <label for="txtIterationNote" class="col-form-label">Note</label>
+                 <textarea id="txtIterationNote" name="txtIterationNote"  class="form-control" readonly></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="txtCloseDate" class="col-form-label">Close Date</label>
+                    <input type="text" class="form-control" id="txtCloseDate" readonly>
+                  </div>
+
+                <div class="form-group">
+                    <label for="txtCloseNote" class="col-form-label">Close Note</label>
+                    <textarea id="txtCloseNote" name="txtCloseNote"  class="form-control" readonly></textarea>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="txtCreatedBy" class="col-form-label">Created by</label>
+                   <input type="text" class="form-control" id="txtCreatedBy" readonly>
+                  </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal" id="btnCloseModal2">Close Modal</button>
+            </div>
+          </div>
+        </div>
+    </div>
+
     <!-- jQuery library -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
 
@@ -65,6 +188,13 @@
 
     <!-- Latest compiled JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!--SweetAlert-->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <!--Load Custom Script-->
+    <script src="/js/interactions.js"></script>
+
 </body>
 
 </html>

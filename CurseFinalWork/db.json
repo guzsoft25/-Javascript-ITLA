@@ -5,45 +5,45 @@
       "name": "Mario Guzmán",
       "userName": "mguzman",
       "PassWord": "123"
+    },
+    {
+      "name": "Luis Guerrero",
+      "userName": "mguzman2",
+      "PassWord": "123",
+      "id": 2
     }
   ],
   "customers": [
     {
       "id": 1,
       "name": "Merrilles",
-      "email": "mbrissard0@sourceforge.net",
-      "address": "648 Weeping Birch Circles",
+      "email": "mbrissard0@itla.com.do",
+      "address": "648 Weeping Birch Circles 2",
       "createAt": "3/25/2021"
     },
     {
       "id": 2,
       "name": "prueba",
-      "email": "prueba@gmail.com",
-      "address": "Direccion de prueba arreeglada",
+      "email": "prueba@itla.com.do",
+      "address": "Direccion de prueba dos veces",
       "createAt": "5/29/2022"
+    },
+    {
+      "name": "Rodrigo Fernandez",
+      "email": "Rodrigo.Fernandez@itla.com.do",
+      "address": "Calle Terceira Boca Chica las Americas",
+      "createAt": "5/30/2022",
+      "id": 3
     }
   ],
   "interactions": [
     {
-      "id": 1,
-      "type": "Meeting",
-      "note": "Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.",
-      "createAt": "3/25/2021",
-      "user": {
-        "id": 1,
-        "name": "Mario Guzmán"
-      },
-      "customer": {
-        "id": 2,
-        "name": "Ambrosio",
-        "email": "aadamsen1@geocities.jp",
-        "address": "70284 3rd Drive"
-      }
-    },
-    {
-      "createAt": "5/29/2022",
-      "note": "primera iteración con el cliente",
+      "createAt": "5/30/2022",
+      "note": "llamada en modo primera iteración",
       "type": "Call",
+      "status": "Canceled",
+      "closeAt": "5/31/2022",
+      "closeNote": "Canceled by user Mario Guzmán - (mguzman)",
       "user": {
         "id": 1,
         "name": "Mario Guzmán"
@@ -51,10 +51,48 @@
       "customer": {
         "id": 1,
         "name": "Merrilles",
-        "email": "mbrissard0@sourceforge.net",
-        "address": "648 Weeping Birch Circles"
+        "email": "mbrissard0@itla.com.do",
+        "address": "648 Weeping Birch Circles 2"
+      },
+      "id": 1
+    },
+    {
+      "createAt": "5/31/2022",
+      "note": "arreglar computadora",
+      "type": "Support",
+      "status": "Completed",
+      "closeAt": "5/31/2022",
+      "closeNote": "arreglo completado",
+      "user": {
+        "id": 1,
+        "name": "Mario Guzmán"
+      },
+      "customer": {
+        "id": 2,
+        "name": "prueba",
+        "email": "prueba@itla.com.do",
+        "address": "Direccion de prueba dos veces"
       },
       "id": 2
+    },
+    {
+      "createAt": "5/31/2022",
+      "note": "primera llamada",
+      "type": "Call",
+      "status": "Canceled",
+      "closeAt": "5/31/2022",
+      "closeNote": "Canceled by user Luis Guerrero - (mguzman2)",
+      "user": {
+        "id": 2,
+        "name": "Luis Guerrero"
+      },
+      "customer": {
+        "id": 1,
+        "name": "Merrilles",
+        "email": "mbrissard0@itla.com.do",
+        "address": "648 Weeping Birch Circles 2"
+      },
+      "id": 3
     }
   ],
   "interactionTypes": [

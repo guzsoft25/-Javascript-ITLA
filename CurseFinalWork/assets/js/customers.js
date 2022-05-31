@@ -129,6 +129,9 @@ $(document).ready(function () {
                 createAt:new Date(Date.now()).toLocaleString().split(',')[0],
                 note:note,
                 type:iterationType,
+                status:"Open",
+                closeAt:"",
+                closeNote:"",
                 user:{
                     id:user.id,
                     name:user.name
